@@ -2,13 +2,32 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #343434;
+  --background-button: #E3F6FF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-roboto);
+}
+
+@layer utilities {
+  .isActive {
+    border: 0.5px solid var(--foreground);
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: var(--background-button);
+  }
+
+  .self-background {
+    background-image: linear-gradient(to right, #ffffff, #DEF9FF);
+  }
+
+  .self-background-button {
+    background-image: linear-gradient(to top, #008AFF 100%, #0670A1 100%);
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
