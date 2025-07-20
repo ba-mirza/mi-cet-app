@@ -34,12 +34,12 @@ export default function InvestmentsPage() {
             </section>
 
             <section className="mt-20">
-                <h1 className="uppercase font-black text-4xl text-center">Актуальные выпуски облигаций</h1>
+                <h1 className="section-text">Актуальные выпуски облигаций</h1>
                 <Table />
             </section>
 
             <section className="mt-20">
-                <h1 className="uppercase font-black text-4xl text-center">Частые вопросы</h1>
+                <h1 className="section-text">Частые вопросы</h1>
                 <Accordion className="mt-8 w-[780px]" multiple activeIndex={0}>
                     <AccordionTab headerClassName="text-[28px] font-semibold"
                                   header="Что такое облигации?">

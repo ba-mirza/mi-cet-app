@@ -1,6 +1,6 @@
 export default function Table() {
     return (
-        <div className="w-full flex justify-center px-[100px] font-bold">
+        <div className="w-full flex justify-center px-[100px] font-bold mt-8">
             <div className="w-full max-w-[1683px] backdrop-blur-md bg-white/70 rounded-xl border border-[#343434] overflow-hidden">
                 <table className="w-full text-sm text-center table-fixed border-separate border-spacing-0">
                     <thead>

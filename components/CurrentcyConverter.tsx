@@ -101,7 +101,7 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <div className="flex flex-col justify-center w-[976px] h-[217px] px-[90px] rounded-lg bg-white border mt-8">
+        <div className="flex flex-col justify-center w-[976px] h-[217px] px-[90px] rounded-lg bg-white mt-8">
             <div className="flex items-center">
                 <div className="flex border-1 rounded-lg w-[400px] p-2 m-2">
                     <input
@@ -147,7 +147,10 @@ export default function CurrencyConverter() {
                     />
                 </div>
             </div>
-            <h1 className="font-medium text-2xl">{amount} {fromCurrency?.code}  = {result} {toCurrency?.name}</h1>
+            <div className="p-[8px]">
+                <h1 className="font-medium text-2xl">{amount} {fromCurrency?.code}  = {result} {toCurrency?.name}</h1>
+                <span className="font-medium text-sm">Средний рыночный курс обмена на {new Date().toLocaleTimeString().slice(0, 4)}</span>
+            </div>
         </div>
     );
 }
