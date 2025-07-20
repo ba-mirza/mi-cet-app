@@ -1,12 +1,28 @@
 import {Metadata} from "next";
 import Table from "@/components/Table";
+import CurrencyConverter from "@/components/CurrentcyConverter";
+
+import { Accordion, AccordionTab } from 'primereact/accordion';
 
 export const metadata: Metadata = {
     title: 'Инвестиции',
     description: 'Информация об инвестициях',
 }
 
+interface CurrencyData {
+    meta: {
+        last_updated_at: string;
+    };
+    data: {
+        [key: string]: {
+            code: string;
+            value: number;
+        };
+    };
+}
+
 export default function InvestmentsPage() {
+
     return (
         <div className="flex flex-col items-center">
             <section className="mt-20">
@@ -14,8 +30,7 @@ export default function InvestmentsPage() {
                     Конвертировать доллары США в тенге<br />
                     по реальному обменному курсу
                 </h1>
-                <div className="w-[976px] h-[217px] rounded-lg border mt-8">
-                </div>
+                <CurrencyConverter />
 
                 {/*Graph table*/}
                 <div className="mt-15">
@@ -36,6 +51,25 @@ export default function InvestmentsPage() {
 
             <section className="mt-20">
                 <h1 className="uppercase font-black text-4xl text-center">Частые вопросы</h1>
+                <Accordion className="mt-8" activeIndex={0}>
+                    <AccordionTab headerClassName="text-[28px] font-semibold"
+                                  className="w-[780px]"
+                                  header="Что такое облигации?">
+
+                    </AccordionTab>
+                    <AccordionTab headerClassName="text-[28px] font-semibold" header="Что лучше — акции или облигации?">
+
+                    </AccordionTab>
+                    <AccordionTab headerClassName="text-[28px] font-semibold" header="Что такое эмитент?">
+
+                    </AccordionTab>
+                    <AccordionTab headerClassName="text-[28px] font-semibold" header="Что такое номинал?">
+
+                    </AccordionTab>
+                    <AccordionTab headerClassName="text-[28px] font-semibold" header="Что такое «погашение»?">
+
+                    </AccordionTab>
+                </Accordion>
             </section>
 
         </div>

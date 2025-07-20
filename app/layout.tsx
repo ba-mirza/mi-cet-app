@@ -3,6 +3,7 @@ import {Roboto} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
+import {PrimeReactProvider} from "primereact/api";
 
 const roboto = Roboto({
     weight: ["300", "400", "500", "700"],
@@ -27,7 +28,9 @@ export default function RootLayout({
       >
       <Banner />
       <Header/>
-        {children}
+        <PrimeReactProvider>
+            {children}
+        </PrimeReactProvider>
       </body>
     </html>
   );
