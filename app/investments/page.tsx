@@ -3,6 +3,9 @@ import Table from "@/components/Table";
 import CurrencyConverter from "@/components/CurrentcyConverter";
 
 import { Accordion, AccordionTab } from 'primereact/accordion';
+import { InputText } from 'primereact/inputtext';
+import { InputMask } from 'primereact/inputmask';
+import { RadioButton } from 'primereact/radiobutton';
 
 export const metadata: Metadata = {
     title: 'Инвестиции',
@@ -80,6 +83,30 @@ export default function InvestmentsPage() {
                         </p>
                     </AccordionTab>
                 </Accordion>
+            </section>
+
+            <section className="mt-20">
+                <div className="flex flex-col items-center justify-center relative">
+                    <div className="w-[550px] border border-[#343434] rounded-lg px-2 py-3 backdrop-blur-md bg-white/50 relative z-10">
+                        <h1 className="section-text">Получить консультацию</h1>
+                    </div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 border border-[#343434] rounded-lg p-2 backdrop-blur-md bg-white/50 w-[1200px] h-[390px] z-0">
+                        <div>
+                            <div className="flex items-center justify-evenly">
+                                <InputText className="p-inputtext-lg" placeholder="Имя" />
+                                <InputText className="p-inputtext-lg" placeholder="Фамилия" />
+                                <div>
+                                    <InputText className="p-inputtext-lg w-15" disabled value="+7" />
+                                    <InputMask style={{marginLeft: 10}} className="p-inputtext-lg" id="phone" mask="(999) 999-9999" placeholder="(999) 999-9999"></InputMask>
+                                </div>
+                            </div>
+                            <div>
+                                <RadioButton inputId="politics" name="some" value="some" checked={true} />
+                                <label htmlFor="politics">Заполняя форму, я принимаю условия передачи информации <br/> условия передачи информации</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
         </div>
