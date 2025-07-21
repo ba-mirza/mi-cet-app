@@ -32,7 +32,6 @@ export default function RootLayout({
         <PrimeReactProvider>
             {children}
         </PrimeReactProvider>
-      <Footer/>
       </body>
     </html>
   );

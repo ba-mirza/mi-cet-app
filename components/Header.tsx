@@ -14,11 +14,11 @@ export default function Header() {
 
                 <div className="flex items-center gap-6">
                     <nav className="flex items-center gap-6">
+                        <ActiveLink href={"/"}>
+                            Главная
+                        </ActiveLink>
                         <ActiveLink href={"/investments"}>
                             Инвестиции
-                        </ActiveLink>
-                        <ActiveLink href={"/about"}>
-                            О нас
                         </ActiveLink>
                     </nav>
 

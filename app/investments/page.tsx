@@ -23,7 +23,7 @@ interface CurrencyData {
     };
 }
 
-export default function InvestmentsPage() {
+export default function InvestmentsPage({ searchParams }: { searchParams: { from?: string, to?: string, amount?: string } }) {
 
     return (
         <div className="flex flex-col items-center">
@@ -32,7 +32,7 @@ export default function InvestmentsPage() {
                     Конвертировать доллары США в тенге<br />
                     по реальному обменному курсу
                 </h1>
-                <CurrencyConverter />
+                <CurrencyConverter searchParams={searchParams} />
             </section>
 
             <BackgroundImage>
