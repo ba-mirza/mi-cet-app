@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "primereact/resources/themes/lara-light-cyan/theme.css";
 
-
 :root {
   --background: #ffffff;
   --foreground: #343434;
@@ -34,6 +33,45 @@
     @apply uppercase font-black text-4xl text-center bg-gradient-to-r from-[#343434] to-[#0670A1] bg-clip-text text-transparent;
   }
 
+  .custom-accordion .p-accordion-tab {
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 0;
+  }
+
+  /* Убираем все фиксированные высоты и делаем естественное поведение */
+  .custom-accordion .p-accordion-content {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  /* Стили для закрытого состояния */
+  .custom-accordion .p-accordion-content[aria-hidden="true"] {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* Стили для открытого состояния */
+  .custom-accordion .p-accordion-content[aria-hidden="false"] {
+    max-height: none; /* Убираем ограничение высоты */
+    opacity: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .accordion-content-wrapper {
+    padding: 0;
+  }
+
+  /* Дополнительные стили для плавности */
+  .custom-accordion .p-accordion-header {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .custom-accordion .p-accordion-header:hover {
+    background-color: #f8fafc;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,7 +83,10 @@
 
 body {
   background: linear-gradient(to bottom, #EAF7FF 0%, #e7e7e7 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   color: var(--foreground);
   font-family: var(--font-roboto), sans-serif;
+  overflow-x: hidden;
 }
