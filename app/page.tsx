@@ -1,8 +1,5 @@
-import { Avatar } from "primereact/avatar";
-import { Button } from "primereact/button";
+import GeoLocation from "@/components/GeoLocation";
 import { Card } from "primereact/card";
-import { Image } from "primereact/image";
-import { title } from "process";
 
 export default function Home() {
   const dealsText = [
@@ -150,6 +147,7 @@ export default function Home() {
 
       <section className="mt-20">
         <h1 className="section-text">Местоположение</h1>
+        <GeoLocation />
       </section>
     </>
   );
