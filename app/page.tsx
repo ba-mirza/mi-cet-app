@@ -82,11 +82,12 @@ export default function Home() {
             <br />
             ваших прав — с гарантией
           </h1>
-          
+
           <p className="mt-8 text-center font-bold text-2xl text-[#343434]">
-            Надёжно. Быстро. Компетентно. С полным соблюдением конфиденциальности.
+            Надёжно. Быстро. Компетентно. С полным соблюдением
+            конфиденциальности.
           </p>
-          
+
           <p className="mt-6 text-center font-bold text-xl text-[#343434] opacity-80">
             Мы ценим ваше время и доверие — предоставляем юридическую помощь{" "}
             <br />
@@ -113,32 +114,58 @@ export default function Home() {
             Качественное решение юридических вопросов
           </h2>
           <div className="mt-10 flex flex-wrap justify-center gap-2 px-4">
-            {
-              legalServices.map((service, idx) => (
-                <Card
-                  header={<img className="w-32 h-auto" src="/img/3d-elem.png" alt="image" />}
-                  className="w-[440px] m-2" key={idx}>
-                  <h2 className="text-center text-[24px] font-semibold p-2">{service.title}</h2>
-                  <ul className="">
-                    {
-                      service.subtitles.map((text, id) => (
-                        <li className="mt-3 text-center text-lg" key={id}>✔️ {text}</li>
-                      ))
-                    }
-                  </ul>
-                </Card>
-              ))
-            }
+            {legalServices.map((service, idx) => (
+              <Card
+                header={
+                  <img
+                    className="w-32 h-auto"
+                    src="/img/3d-elem.png"
+                    alt="image"
+                  />
+                }
+                className="w-[440px] m-2"
+                key={idx}
+              >
+                <h2 className="text-center text-[24px] font-semibold p-2">
+                  {service.title}
+                </h2>
+                <ul className="">
+                  {service.subtitles.map((text, id) => (
+                    <li className="mt-3 text-center text-lg" key={id}>
+                      ✔️ {text}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="mt-20">
-        <h1 className="section-text">О нас</h1>
+        <div className="flex items-center mix-blend-luminosity bg-[url('/img/about-bg.png')] bg-cover bg-right bg-no-repeat mt-5 border-t-1 border-b-1 border-[#343434] h-[600px] w-full bg-white px-12">
+          <div className="flex flex-col gap-2">
+            <h1 className="uppercase font-black text-6xl bg-gradient-to-r from-[#343434] to-[#0670A1] bg-clip-text text-transparent">О нас</h1>
+            <p className="mt-4 w-1/2 font-medium text-xl">
+              Профессиональный опыт юристов по гражданским и административным
+              делам, корпоративным спорам, решению споров с государственными
+              органами, учреждениями и организациями всех форм собственности
+              позволяет положительно решать острые вопросы и проблемы наших
+              клиентов. <br /> <br /> Опыт наших специалистов в области
+              правового регулирования отношении возникающих в авиационном,
+              железнодорожном, автомобильном и водном транспортах,
+              недропользовании, строительстве и финансовом регулировании, в том
+              числе фискального, позволяет нашим клиентам уверенно планировать
+              свои действия и будущее.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="mt-20">
-        <h1 className="section-text">Обратившись в нашу юридическую <br /> фирму Вы получите</h1>
+        <h1 className="section-text">
+          Обратившись в нашу юридическую <br /> фирму Вы получите
+        </h1>
       </section>
 
       <section className="mt-20">
