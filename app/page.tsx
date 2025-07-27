@@ -1,5 +1,6 @@
 import GeoLocation from "@/components/GeoLocation";
 import { Card } from "primereact/card";
+import { Image } from "primereact/image";
 
 export default function Home() {
   const dealsText = [
@@ -58,6 +59,14 @@ export default function Home() {
       title: "Медиация",
       subtitles: ["Урегулирование споров профессиональным медиатором"]
     }
+  ];
+
+  const serviceCard = [
+    "Профессиональную консультацию юристов",
+    "Индивидуальный подход к каждому клиенту",
+    "Скидки и гибкая система оплаты для каждого клиента",
+    "Сохранность всей конфиденциальной информации о клиенте",
+    "Профессиональную юридическую помощь по защите ваших прав и интересов в суде и в государственных органах",
   ];
 
   return (
@@ -145,7 +154,9 @@ export default function Home() {
       <section className="mt-20">
         <div className="flex items-center mix-blend-luminosity bg-[url('/img/about-bg.png')] bg-cover bg-right bg-no-repeat mt-5 border-t-1 border-b-1 border-[#343434] h-[600px] w-full bg-white px-12">
           <div className="flex flex-col gap-2">
-            <h1 className="uppercase font-black text-6xl bg-gradient-to-r from-[#343434] to-[#0670A1] bg-clip-text text-transparent">О нас</h1>
+            <h1 className="uppercase font-black text-6xl bg-gradient-to-r from-[#343434] to-[#0670A1] bg-clip-text text-transparent">
+              О нас
+            </h1>
             <p className="mt-4 w-1/2 font-medium text-xl">
               Профессиональный опыт юристов по гражданским и административным
               делам, корпоративным спорам, решению споров с государственными
@@ -166,10 +177,24 @@ export default function Home() {
         <h1 className="section-text">
           Обратившись в нашу юридическую <br /> фирму Вы получите
         </h1>
+        {serviceCard.map((text: string, id: number) => (
+          <Card key={id}>{text}</Card>
+        ))}
       </section>
 
       <section className="mt-20">
         <h1 className="section-text">Сертификат о деятельности</h1>
+        <div className="mt-8 flex justify-center">
+          <div className="flex border-1 rounded-lg bg-[#eaeaea] w-[396px]">
+            <Image
+              closeOnEscape={true}
+              preview
+              imageClassName="rounded-lg"
+              src="/img/certificate.jpg"
+              alt="certificate"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="mt-20">
