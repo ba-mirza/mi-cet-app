@@ -9,7 +9,7 @@ export default function ActiveLink({href, children}: {href: string; children: Re
     const isActive = pathname === href;
 
     return (
-        <Link className={isActive ? 'isActive' : ''} href={href}>
+        <Link className={isActive ? 'isActive' : 'hover:text-[#0670A1]'} href={href}>
             {children}
         </Link>
     )

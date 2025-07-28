@@ -18,7 +18,7 @@ export default function Header() {
             <header className="w-[1056px] h-[69px] self-background border border-gray-200 shadow-sm rounded-lg flex items-center justify-between px-2.5">
                 <div className="flex items-center ml-10">
                     <Link href="/" className="text-lg font-bold text-gray-900">
-                        <Image src="/logo.png" alt="logo" width={64} height={64} />
+                        <Image src="/logo.png" alt="logo" width={64} height={64} loading="lazy" />
                     </Link>
                 </div>
 
@@ -35,7 +35,7 @@ export default function Header() {
                     <button
                         onClick={openMessenger}
                         className="flex gap-2 mr-10 bg-[#60D66A] hover:bg-[#29B63F] border-2 border-[#fff] text-white px-4 py-1.5 rounded-md transition-colors duration-200 cursor-pointer">
-                        <Image width={24} height={24} src="/icons/whatsapp.png" alt="whatsapp-icon" />
+                        <Image width={24} height={24} src="/icons/whatsapp.png" alt="whatsapp-icon" loading="lazy" />
                         Связаться
                     </button>
                 </div>

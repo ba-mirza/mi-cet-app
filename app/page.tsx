@@ -130,7 +130,7 @@ export default function Home() {
             {dealsText.map((deal, index) => (
               <p
                 key={index}
-                className="border border-[#0670A1] rounded-lg bg-[#EAEAEA] cursor-pointer hover:bg-white transition-colors p-3 text-center font-semibold text-lg text-[#343434]"
+                className="border border-[#0670A1] rounded-lg bg-[#fff] cursor-pointer hover:bg-blue-100 transition-colors p-3 text-center font-semibold text-lg text-[#343434]"
               >
                 {deal}
               </p>
@@ -235,9 +235,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-20">
+      <section className="mt-20 mb-8">
         <h1 className="section-text">Сертификат о деятельности</h1>
-        <div className="mt-8 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <div className="flex border-1 rounded-lg bg-[#eaeaea] w-[396px]">
             <Image
               closeOnEscape={true}
