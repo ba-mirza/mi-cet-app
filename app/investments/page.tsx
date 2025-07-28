@@ -11,19 +11,7 @@ export const metadata: Metadata = {
     description: 'Информация об инвестициях',
 }
 
-interface CurrencyData {
-    meta: {
-        last_updated_at: string;
-    };
-    data: {
-        [key: string]: {
-            code: string;
-            value: number;
-        };
-    };
-}
-
-export default function InvestmentsPage({ searchParams }: { searchParams: { from?: string, to?: string, amount?: string } }) {
+export default function InvestmentsPage() {
 
     return (
         <div className="flex flex-col items-center">
@@ -32,7 +20,7 @@ export default function InvestmentsPage({ searchParams }: { searchParams: { from
                     Конвертировать доллары США в тенге<br />
                     по реальному обменному курсу
                 </h1>
-                <CurrencyConverter searchParams={searchParams} />
+                <CurrencyConverter />
             </section>
 
             <BackgroundImage>
