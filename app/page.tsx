@@ -249,10 +249,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="mt-20">
-        <h1 className="section-text">FAQ</h1>
-      </section>
     </>
   );
 }

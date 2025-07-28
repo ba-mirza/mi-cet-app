@@ -18,7 +18,7 @@ export default function Header() {
             <header className="w-[1056px] h-[69px] self-background border border-gray-200 shadow-sm rounded-lg flex items-center justify-between px-2.5">
                 <div className="flex items-center ml-10">
                     <Link href="/" className="text-lg font-bold text-gray-900">
-                        Logo
+                        <Image src="/logo.png" alt="logo" width={64} height={64} />
                     </Link>
                 </div>
 
