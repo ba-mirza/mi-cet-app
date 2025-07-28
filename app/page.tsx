@@ -1,4 +1,3 @@
-import GeoLocation from "@/components/GeoLocation";
 import { Card } from "primereact/card";
 import { Image } from "primereact/image";
 
@@ -71,11 +70,26 @@ export default function Home() {
   ];
 
   const serviceCard = [
-    "Профессиональную консультацию юристов",
-    "Индивидуальный подход к каждому клиенту",
-    "Скидки и гибкая система оплаты для каждого клиента",
-    "Сохранность всей конфиденциальной информации о клиенте",
-    "Профессиональную юридическую помощь по защите ваших прав и интересов в суде и в государственных органах",
+    {
+      title: "Профессиональную консультацию юристов",
+      imgSource: "/img/11.jpg",
+    },
+    {
+      title: "Индивидуальный подход к каждому клиенту",
+      imgSource: "/img/22.jpg",
+    },
+    {
+      title: "Скидки и гибкая система оплаты для каждого клиента",
+      imgSource: "/img/33.jpg",
+    },
+    {
+      title: "Сохранность всей конфиденциальной информации о клиенте",
+      imgSource: "/img/44.jpg",
+    },
+    {
+      title: "Профессиональную юридическую помощь по защите ваших прав и интересов в суде и в государственных органах",
+      imgSource: "/img/55.jpg",
+    },
   ];
 
   return (
@@ -148,7 +162,7 @@ export default function Home() {
                 <h2 className="text-center text-[24px] font-semibold p-2">
                   {service.title}
                 </h2>
-                <ul className="">
+                <ul>
                   {service.subtitles.map((text, id) => (
                     <li className="mt-3 text-center text-lg" key={id}>
                       ✔️ {text}
@@ -187,9 +201,38 @@ export default function Home() {
         <h1 className="section-text">
           Обратившись в нашу юридическую <br /> фирму Вы получите
         </h1>
-        {serviceCard.map((text: string, id: number) => (
-          <Card key={id}>{text}</Card>
-        ))}
+        <div className="mt-6">
+          <div className="grid grid-cols-3 mx-auto max-w-fit gap-4">
+            {
+              serviceCard.slice(0, 3).map((serv, index: number) => (
+                  <div
+                      style={{backgroundImage: `url(${serv.imgSource})`}}
+                      className="w-[428px] h-[360px] rounded-lg bg-cover bg-no-repeat relative overflow-hidden"
+                      key={index}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0670A1] to-transparent hover:to-[#0670A1]/25 transition-all duration-500"></div>
+                    <h2 className="uppercase absolute bottom-0 left-0 right-0 text-center text-[20px] font-semibold p-3 text-white z-10">
+                      {serv.title}
+                    </h2>
+                  </div>
+              ))
+            }
+          </div>
+          <div className="grid grid-cols-2 mx-auto max-w-fit mt-4 gap-4">
+            {
+              serviceCard.slice(3, 5).map((serv, index: number) => (
+                  <div
+                      style={{backgroundImage: `url(${serv.imgSource})`}}
+                      className="w-[650px] h-[360px] rounded-lg bg-cover bg-no-repeat relative overflow-hidden col-span-2/1"
+                      key={index}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0670A1] to-transparent hover:to-[#0670A1]/25 transition-all duration-500"></div>
+                    <h2 className="uppercase absolute bottom-0 left-0 right-0 text-center text-[20px] font-semibold p-3 text-white z-10">
+                      {serv.title}
+                    </h2>
+                  </div>
+              ))
+            }
+          </div>
+        </div>
       </section>
 
       <section className="mt-20">
@@ -208,8 +251,7 @@ export default function Home() {
       </section>
 
       <section className="mt-20">
-        <h1 className="section-text">Местоположение</h1>
-        <GeoLocation />
+        <h1 className="section-text">FAQ</h1>
       </section>
     </>
   );
