@@ -25,38 +25,47 @@ export default function Home() {
   const legalServices = [
     {
       title: "Защита интересов",
+      imgSource: "/img/1.jpg",
       subtitles: ["Юридические консультации", "Исполнительное производство", "Представительство в суде", "Подготовка жалоб, претензий"]
     },
     {
       title: "Заключение договоров",
+      imgSource: "/img/2.jpg",
       subtitles: ["Подготовка договоров", "Экспертиза договоров", "Сопровождение сделок",],
     },
     {
       title: "Аутсорсинг",
+      imgSource: "/img/3.jpg",
       subtitles: ["Юридический аутсорсинг", "Юридическое обслуживание"],
     },
     {
       title: "Корпоративное право",
+      imgSource: "/img/4.jpg",
       subtitles: ["Регистрация ТОО/АО", "Перерегистрация/Ликвидация", "Разработка корпоративных документов", "Консультация органов управления"]
     },
     {
       title: "Сопровождение в тендерах",
+      imgSource: "/img/5.jpg",
       subtitles: ["Услуги тендерного специалиста", "Госзакупки", "Закупки нац. компаний и холдингов", "Закупки субъектов естественных монополий"]
     },
     {
       title: "Защита интересов",
+      imgSource: "/img/6.jpg",
       subtitles: ["Юридические консультации", "Исполнительное производство", "Представительство в суде", "Подготовка жалоб, претензий"]
     },
     {
       title: "Правовой аудит",
+      imgSource: "/img/7.jpg",
       subtitles: ["Кадровый аудит", "Договорной аудит", "Аудит закупочных процедур", "Аудит ВНД"],
     },
     {
       title: "Консалтинг в сфере строительства",
+      imgSource: "/img/8.jpg",
       subtitles: ["Договоры строительного подряда", "Споры, связанные с ними"]
     },
     {
       title: "Медиация",
+      imgSource: "/img/9.jpg",
       subtitles: ["Урегулирование споров профессиональным медиатором"]
     }
   ];
@@ -126,13 +135,14 @@ export default function Home() {
             {legalServices.map((service, idx) => (
               <Card
                 header={
-                  <img
+                  <Image
                     className="w-32 h-auto"
-                    src="/img/3d-elem.png"
-                    alt="image"
+                    src={service.imgSource}
+                    alt={`image-${service.title}`}
+                    loading="lazy"
                   />
                 }
-                className="w-[440px] m-2"
+                className="w-[440px] m-2 transition-all duration-300 hover:backdrop-blur-md hover:bg-white/10 hover:border-white/20 hover:shadow-xl hover:-translate-y-2 select-none"
                 key={idx}
               >
                 <h2 className="text-center text-[24px] font-semibold p-2">
