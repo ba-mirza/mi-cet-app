@@ -75,10 +75,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
+  /* :root {
+    --background: #343434;
     --foreground: #ededed;
-  }
+  } */
 }
 
 body {
