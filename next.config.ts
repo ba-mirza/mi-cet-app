@@ -34,10 +34,6 @@ const nextConfig: NextConfig = {
   },
   
   trailingSlash: false,
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['primereact']
-  },
 };
 
 export default nextConfig;
