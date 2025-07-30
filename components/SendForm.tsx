@@ -4,10 +4,24 @@ import {InputText} from "primereact/inputtext";
 import {InputMask} from "primereact/inputmask";
 import {RadioButton} from "primereact/radiobutton";
 import {Button} from "primereact/button";
+import { Toast } from "primereact/toast";
+
 import axios from "axios";
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 export default function SendForm() {
+    const toast = useRef(null);
+
+    const statusMessage = (type: string, headTitle: string) => {
+        toast.current.show(
+            {
+                severity: type,
+                summary: headTitle,
+                detail: status
+            }
+        );
+    }
+
     const [status, setStatus] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -17,6 +31,7 @@ export default function SendForm() {
                 <h1 className="section-text text-2xl font-bold">Получить консультацию</h1>
             </div>
 
+            <Toast ref={toast} />
             <div className="flex justify-center items-center border border-[#343434] rounded-lg p-10 backdrop-blur-md bg-white/50 w-full max-w-[1200px] mt-4">
                 <div>
                     <form onSubmit={async (e) => {
@@ -36,12 +51,15 @@ export default function SendForm() {
                         
                             if(res.status === 200) {
                                 setStatus("Заявка успешно отправлена");
+                                statusMessage('success', 'Успешно!');
                             } else {
                                 setStatus('Ошибка при отправке: ' + res.statusText);
+                                statusMessage('warn', 'Request failed');
                             }
                         } catch (error) {
                             console.error('Ошибка отправки:', error);
                             setStatus('Ошибка при отправке');
+                            statusMessage('warn', 'Request failed');
                         } finally {
                             setLoading(false);
                         }
