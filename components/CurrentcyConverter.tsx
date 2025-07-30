@@ -34,7 +34,8 @@ const fetchCurrencies = async (): Promise<Currency[]> => {
             code: currency.code,
             name: currency.code,
             value: parseFloat(currency.value.toString()),
-            countryCode: currency.code.slice(0, 2)
+            countryCode: currency.code.slice(0, 2),
+            key: key,
         }));
     } catch (error) {
         console.error('Failed to fetch currencies:', error);
@@ -74,7 +75,7 @@ export default function CurrencyConverter() {
                 }
             } catch (err) {
                 if (isMounted) {
-                    setError('Не удалось загрузить курсы валют');
+                    setError(`Не удалось загрузить курсы валют\nError: ${err}`);
                     setLoading(false);
                 }
             }

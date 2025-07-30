@@ -13,6 +13,7 @@ export default function SendForm() {
     const toast = useRef(null);
 
     const statusMessage = (type: string, headTitle: string) => {
+        // @ts-expect-error Because
         toast.current.show(
             {
                 severity: type,
