@@ -1,7 +1,7 @@
-import {NextRequest,NextResponse} from "next/server";
+import { NextResponse } from "next/server";
 import axios from "axios";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
     try {
         const response = await axios.get(`${process.env.CURRENCY_BASE_URL}?apikey=${process.env.CURRENCY_TOKEN}`);
 
