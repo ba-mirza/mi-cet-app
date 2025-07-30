@@ -30,21 +30,21 @@ export default function SendForm() {
                         console.log(firstname, lastname, `+7${phone}`);
                         setLoading(false);
 
-                        // try {
-                        //     setLoading(true);
-                        //     const res = await axios.post("/api/form", {firstname, lastname, phone});
-                        //
-                        //     if(res.status === 200) {
-                        //         setStatus("Заявка успешно отправлена");
-                        //     } else {
-                        //         setStatus('Ошибка при отправке: ' + res.statusText);
-                        //     }
-                        // } catch (error) {
-                        //     console.error('Ошибка отправки:', error);
-                        //     setStatus('Ошибка при отправке');
-                        // } finally {
-                        //     setLoading(false);
-                        // }
+                        try {
+                            setLoading(true);
+                            const res = await axios.post("/api/form", {firstname, lastname, phone});
+                        
+                            if(res.status === 200) {
+                                setStatus("Заявка успешно отправлена");
+                            } else {
+                                setStatus('Ошибка при отправке: ' + res.statusText);
+                            }
+                        } catch (error) {
+                            console.error('Ошибка отправки:', error);
+                            setStatus('Ошибка при отправке');
+                        } finally {
+                            setLoading(false);
+                        }
                     }}>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                             <InputText name="firstname" className="p-inputtext-lg w-full md:w-auto" placeholder="Имя" />
