@@ -123,7 +123,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       {/* Background Image - позади Banner и Header */}
       <div
         className="absolute top-0 left-0 w-full opacity-35 -z-10 bg-cover bg-center lg:bg-auto lg:bg-top"
@@ -222,28 +222,28 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="mt-12 sm:mt-16 lg:mt-20 2xl:mt-24">
-        <div className="flex items-center mix-blend-luminosity bg-[url('/img/about-bg.png')] bg-cover bg-center bg-no-repeat mt-3 border-t-1 border-b-1 border-[#343434] h-[300px] w-full bg-white px-4 sm:h-[400px] sm:px-6 md:h-[500px] md:px-8 lg:h-[600px] lg:bg-right lg:px-12 2xl:h-[700px]">
-          <div className="flex flex-col gap-1 sm:gap-2">
-            <h1 className="uppercase font-black text-2xl bg-gradient-to-r from-[#343434] to-[#0670A1] bg-clip-text text-transparent sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
-              О нас
-            </h1>
-            <p className="mt-2 w-full font-medium text-sm leading-relaxed sm:mt-3 sm:text-base sm:w-3/4 md:mt-4 md:text-lg md:w-2/3 lg:w-1/2 lg:text-xl 2xl:text-2xl">
-              Профессиональный опыт юристов по гражданским и административным
-              делам, корпоративным спорам, решению споров с государственными
-              органами, учреждениями и организациями всех форм собственности
-              позволяет положительно решать острые вопросы и проблемы наших
-              клиентов. <br className="hidden sm:inline" />{" "}
-              <br className="hidden sm:inline" /> Опыт наших специалистов в
-              области правового регулирования отношении возникающих в
-              авиационном, железнодорожном, автомобильном и водном транспортах,
-              недропользовании, строительстве и финансовом регулировании, в том
-              числе фискального, позволяет нашим клиентам уверенно планировать
-              свои действия и будущее.
-            </p>
-          </div>
-        </div>
-      </section>
+<section className="mt-12 sm:mt-16 lg:mt-20 2xl:mt-24">
+  <div className="flex items-center mix-blend-luminosity bg-[url('/img/about-bg.png')] bg-cover bg-center bg-no-repeat mt-3 border-t-1 border-b-1 border-[#343434] h-[300px] w-full bg-white px-4 sm:h-[400px] sm:px-6 md:h-[500px] md:px-8 lg:h-[600px] lg:bg-right lg:px-12 2xl:h-[700px]">
+    <div className="flex flex-col gap-1 sm:gap-2">
+      <h1 className="uppercase font-black text-2xl bg-gradient-to-r from-[#343434] to-[#0670A1] bg-clip-text text-transparent sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
+        О нас
+      </h1>
+      <p className="mt-2 font-medium text-xs leading-relaxed sm:mt-3 sm:text-base sm:w-3/4 md:mt-4 md:text-lg md:w-2/3 lg:w-1/2 lg:text-xl 2xl:text-2xl">
+        Профессиональный опыт юристов по гражданским и административным
+        делам, корпоративным спорам, решению споров с государственными
+        органами, учреждениями и организациями всех форм собственности
+        позволяет положительно решать острые вопросы и проблемы наших
+        клиентов. <br className="hidden sm:inline" />{" "}
+        <br className="hidden sm:inline" /> Опыт наших специалистов в
+        области правового регулирования отношении возникающих в
+        авиационном, железнодорожном, автомобильном и водном транспортах,
+        недропользовании, строительстве и финансовом регулировании, в том
+        числе фискального, позволяет нашим клиентам уверенно планировать
+        свои действия и будущее.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Services Grid Section */}
       <section className="mt-12 sm:mt-16 lg:mt-20 2xl:mt-24">
@@ -304,6 +304,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

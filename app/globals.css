@@ -22,11 +22,11 @@
   }
 
   .self-background {
-    background-image: linear-gradient(to right, #ffffff, #DEF9FF);
+    background-image: linear-gradient(to right, #ffffff, #def9ff);
   }
 
   .self-background-button {
-    background-image: linear-gradient(to top, #008AFF 100%, #0670A1 100%);
+    background-image: linear-gradient(to top, #008aff 100%, #0670a1 100%);
   }
 
   .section-text {
@@ -82,11 +82,16 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #EAF7FF 0%, #e7e7e7 100%);
+  background: linear-gradient(to bottom, #eaf7ff 0%, #e7e7e7 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   color: var(--foreground);
   font-family: var(--font-roboto), sans-serif;
   overflow-x: hidden;
+}
+
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
